@@ -1,0 +1,16 @@
+# Estructuras de Datos en JavaScript
+
+El objetivo del proyecto es repasar las estrcuturas de datos:
+
+- Arreglos 
+- Pilas
+- Colas
+- Listas Enlazadas
+  - Listas Doblemente Enlazadas
+- Árboles
+  - Árbol binario de busqueda
+- Map
+- Set
+- Grafos
+  - Grafos dirigidos
+
