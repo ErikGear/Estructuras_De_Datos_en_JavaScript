@@ -1,0 +1,15 @@
+{
+    "nombre": "erik galindo",
+    "email": "erik@gmail.com",
+    "site": "www.misitio.com",
+    "skills": [
+        "backend",
+        "frontend",
+        "iot"
+    ],
+   "address":{
+    "city": "México",
+    "region": "Amecameca",
+    "country": "EdoMex"
+   }
+}
