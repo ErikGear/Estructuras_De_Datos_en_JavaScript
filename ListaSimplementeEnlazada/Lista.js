@@ -31,8 +31,7 @@ elementos en memoria de forma no secuencial y recalco en memoria, de forma logic
 
 lista enlazada:
 una lista enlaza es una coleccion de objetos, llamados nodos, el cual cada uno de ellos contiene un campo interno que
-apunta al siguiente elemento, lo cual permitira realizar un recorrido transversal por la estructura como se ve en la
-siguiente figura:
+apunta al siguiente elemento, lo cual permitira realizar un recorrido transversal por la estructura.
 */
 
 class ListaSimplementeEnlazada {
