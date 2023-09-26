@@ -56,6 +56,18 @@ class Queue {
     }
   }
 
+  backValue(){
+    try {
+      if (this.#data.length === 0) {
+        throw "Error, no existen elementos en Cola";
+      } else {
+        console.log(`Back: ${this.#data[this.#data.length - 1]}`);
+      }
+    } catch (error) {
+      console.log(`${e}`);
+    }
+  }
+
   toString() {
     for (const item of this.#data) {
       console.log(`Item queue: ${item}`);
