@@ -24,9 +24,9 @@ class Pila{
     pop(){
       try {
         if (this.#data.length === 0) {
-          return this.#data.pop();
-        } else {
           throw "Error, no hay elmentos en la Pila";
+        } else {
+          return this.#data.pop();
         }
       } catch (e) {
         console.log(e);
