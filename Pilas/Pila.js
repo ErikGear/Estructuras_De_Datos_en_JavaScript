@@ -55,6 +55,10 @@ class Pila{
             console.log(`Item: ${this.#data[i]}`);
         }
     }
+
+    getSize(){
+      return this.#data.length;
+    }
 }
 
 const pila  = new Pila();
