@@ -22,7 +22,16 @@ class Pila{
     //Elimina el ultimo elemento de la pila
     // y al mismo tiempo retorna dicho elemento
     pop(){
-        return this.#data.pop();
+      try {
+        if (this.#data.length === 0) {
+          return this.#data.pop();
+        } else {
+          throw "Error, no hay elmentos en la Pila";
+        }
+      } catch (e) {
+        console.log(e);
+      }
+        
     }
 
     //indica si la pila contiene elementos
