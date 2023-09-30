@@ -49,30 +49,30 @@ class ListaSimplementeEnlazada {
     return this.size === 0;
   }
 
-  recorrerLista(){
+  recorrerLista() {
     let tmp = this.head;
 
-    while(tmp !== null){
+    while (tmp !== null) {
       console.log(`Nodo: ${tmp.getData}`);
       tmp = tmp.getNext;
     }
   }
 
-  ultimoNodo(){
+  ultimoNodo() {
     if (this.head === null) {
       return null;
     }
     let ultimo = this.head;
     let control = this.head;
-    
-    while(control !== null){
+
+    while (control !== null) {
       ultimo = control;
       control = ultimo.getNext;
     }
     return ultimo;
   }
 
-  insertarNodo(data){
+  insertarNodo(data) {
     if (this.size === 0) {
       this.head = new Nodo(data);
     } else {
@@ -82,7 +82,26 @@ class ListaSimplementeEnlazada {
     this.size++;
   }
 
-  
+  eliminarNodos() {
+    this.head = null;
+    this.size = 0;
+  }
+
+  eliminarNodo(nodo) {
+    if (this.head._data === nodo) {
+      this.head = this.head._next;
+    } else {
+      let tmp = this.head;
+
+      while (tmp._next !== null) {
+        if (tmp._next._data === nodo) {
+          tmp._next = tmp._next._next;
+          break;
+        }
+        tmp = tmp._next;
+      }
+    }
+  }
 }
 
 const lista = new ListaSimplementeEnlazada();
@@ -92,3 +111,8 @@ lista.insertarNodo(25);
 
 lista.recorrerLista();
 console.log(`Longitud: ${lista.getSize}`);
+
+//eliminar un nodo
+lista.eliminarNodo(25);
+console.log("\n");
+lista.recorrerLista();
