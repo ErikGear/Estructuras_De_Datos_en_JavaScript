@@ -1,8 +1,8 @@
 class NodoDoble {
-  constructor(data, next, previous) {
+  constructor(data) {
     this._data = data;
-    this._next = next;
-    this._previous = previous;
+    this._next = null;
+    this._previous = null;
   }
 
   set setData(newData) {
@@ -29,8 +29,8 @@ class NodoDoble {
 
 class ListaDoble {
   constructor() {
-    this.head = new NodoDoble(null, null, null);
-    this.tail = new NodoDoble(null, null, null);
+    this.head = null;
+    this.tail = null;
 
     this.head.setNext = this.tail;
     this.tail.setPrevious = this.head;
@@ -46,34 +46,28 @@ class ListaDoble {
     return this.size === 0;
   }
 
-  insertNode(data) {
-    if (this.size === 0) {
-      const nuevoNodo = new NodoDoble(data, this.tail, this.head);
-      this.head.setNext = nuevoNodo;
-      this.tail.setPrevious = nuevoNodo;
+  insertarNodo(nodo){
+    const nuevoNodo = new Node(nodo);
+    if (this.head === null) {
+      this.head = nuevoNodo;
+      this.tail = nuevoNodo;
     } else {
-      const nuevoNodo = new NodoDoble(data, this.tail, this.tail.previous);
-      this.tail.getPrevious.setNext = nuevoNodo;
-      this.tail.setPrevious = nuevoNodo;
+      this.tail._next = nuevoNodo;
+      nuevoNodo = this.tail;
+      this.tail = nuevoNodo;
     }
+
     this.size++;
   }
 
-  recorridoTransversal() {
-    let tmp = this.head;
-    while (tmp.getNext !== null) {
-      tmp = tmp.getNext;
-      console.log(`Nodo: ${tmp.getData}`);
-    }
+  clear(){
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
   }
 
-  recorridoTransversalInverso() {
-    let tmp = this.tail;
-    while (tmp.getPrevious !== null) {
-      tmp = tmp.getPrevious;
-      console.log(`Nodo: ${tmp.getData}`);
-    }
-  }
+
+
 }
 
 const listaDoble = new ListaDoble();
