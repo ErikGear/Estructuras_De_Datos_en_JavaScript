@@ -121,3 +121,8 @@ listaDoble.insertarNodo(89);
 listaDoble.recorrerLista();
 
 console.log(`Longitud: ${listaDoble.getSize}`);
+
+console.log("\n");
+
+listaDoble.eliminarNodo(1);
+listaDoble.recorrerLista();
