@@ -66,6 +66,15 @@ class ListaDoble {
     }
   }
 
+  recorridoInverso(){
+    let tmp = this.tail;
+
+    while (tmp !== null) {
+      console.log(`${tmp._data}`);
+      tmp = tmp._previous;
+    }
+  }
+
   eliminarNodo(nodo) {
     if (this.size === 0) {
       throw "Error, Lista sin elementos";
@@ -126,3 +135,7 @@ console.log("\n");
 
 listaDoble.eliminarNodo(1);
 listaDoble.recorrerLista();
+
+console.log("\n");
+//recorrido inverso de la lista
+listaDoble.recorridoInverso();
