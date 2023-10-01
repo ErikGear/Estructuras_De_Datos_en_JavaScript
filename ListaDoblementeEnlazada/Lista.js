@@ -43,7 +43,7 @@ class ListaDoble {
     return this.size === 0;
   }
 
-  insertarNodo(nodo){
+  insertarNodo(nodo) {
     const nuevoNodo = new NodoDoble(nodo);
     if (this.head === null) {
       this.head = nuevoNodo;
@@ -57,7 +57,7 @@ class ListaDoble {
     this.size++;
   }
 
-  recorrerLista(){
+  recorrerLista() {
     let tmp = this.head;
 
     while (tmp !== null) {
@@ -66,14 +66,48 @@ class ListaDoble {
     }
   }
 
-  clear(){
+  eliminarNodo(nodo) {
+    if (this.size === 0) {
+      throw "Error, Lista sin elementos";
+    }
+
+    //cuando el nodo es la cabeza HEAD
+    if (this.head._data === nodo) {
+      if (this.size === 1) {
+        this.head = null;
+        this.tail = null;
+      } else {
+        this.head = this.head._next;
+        this.head._previous = null;
+      }
+      this.size--;
+
+
+      //cuando el nodo esta en la cola
+    } else if ( this.tail._data === nodo){
+      this.tail = this.tail._previous;
+      this.tail._next = null;
+      this.size--;
+    } else { //cuando el nodo esta en el medio de la lista
+      let tmp = this.head;
+
+      while (tmp._next !== null) {
+        if (tmp._next._data === nodo) {
+          tmp._next = tmp._next._next;
+          tmp._next._previous = tmp;
+          this.size--;
+          break;
+        }
+        tmp = tmp._next;
+      }
+    }
+  }
+
+  clear() {
     this.head = null;
     this.tail = null;
     this.size = 0;
   }
-
-
-
 }
 
 const listaDoble = new ListaDoble();
@@ -87,4 +121,3 @@ listaDoble.insertarNodo(89);
 listaDoble.recorrerLista();
 
 console.log(`Longitud: ${listaDoble.getSize}`);
-
