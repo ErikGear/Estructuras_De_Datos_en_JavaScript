@@ -32,9 +32,6 @@ class ListaDoble {
     this.head = null;
     this.tail = null;
 
-    this.head.setNext = this.tail;
-    this.tail.setPrevious = this.head;
-
     this.size = 0;
   }
 
@@ -47,17 +44,26 @@ class ListaDoble {
   }
 
   insertarNodo(nodo){
-    const nuevoNodo = new Node(nodo);
+    const nuevoNodo = new NodoDoble(nodo);
     if (this.head === null) {
       this.head = nuevoNodo;
       this.tail = nuevoNodo;
     } else {
       this.tail._next = nuevoNodo;
-      nuevoNodo = this.tail;
+      nuevoNodo._previous = this.tail;
       this.tail = nuevoNodo;
     }
 
     this.size++;
+  }
+
+  recorrerLista(){
+    let tmp = this.head;
+
+    while (tmp !== null) {
+      console.log(`${tmp._data}`);
+      tmp = tmp._next;
+    }
   }
 
   clear(){
@@ -71,12 +77,14 @@ class ListaDoble {
 }
 
 const listaDoble = new ListaDoble();
-listaDoble.insertNode(10);
-listaDoble.insertNode(25);
-listaDoble.insertNode(12);
-listaDoble.insertNode(1);
-listaDoble.insertNode(89);
+listaDoble.insertarNodo(10);
+listaDoble.insertarNodo(25);
+listaDoble.insertarNodo(12);
+listaDoble.insertarNodo(1);
+listaDoble.insertarNodo(89);
 
-//listaDoble.recorridoTransversal();
+//recorriendo lista
+listaDoble.recorrerLista();
+
 console.log(`Longitud: ${listaDoble.getSize}`);
-listaDoble.recorridoTransversalInverso();
+
