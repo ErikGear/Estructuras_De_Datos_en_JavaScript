@@ -7,6 +7,10 @@ class TreeNode {
     this.left = null;
     this.right = null;
   }
+
+  toString(){
+    return `${this.data}`;
+  }
 }
 
 class BinarySearchTree {
@@ -78,3 +82,5 @@ arbolBinario.insertarNodo(15);
 arbolBinario.insertarNodo(6);
 arbolBinario.insertarNodo(8);
 arbolBinario.insertarNodo(4);
+
+console.log(`Nodo: ${arbolBinario.buscarNodo(6)}`);
