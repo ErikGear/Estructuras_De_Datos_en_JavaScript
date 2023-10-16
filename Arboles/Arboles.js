@@ -71,6 +71,19 @@ class BinarySearchTree {
     return false;
   }
 
+  recorridoInOrder(nodo){
+    if (nodo === undefined) {
+      nodo = this.root;
+    }
+
+    if (nodo !== null) {
+      this.recorridoInOrder(nodo.left);
+
+      console.log(nodo.toString());
+
+      this.recorridoInOrder(nodo.right);
+    }
+  }
 
 
 }
@@ -102,3 +115,5 @@ arbolBinario.insertarNodo(8);
 arbolBinario.insertarNodo(4);
 
 console.log(`Nodo: ${arbolBinario.buscarNodo(6)}`);
+
+arbolBinario.recorridoInOrder();
