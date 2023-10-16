@@ -2,8 +2,8 @@
 //un árbol binario es aquel que se encuentra vacio
 // o que cuenta con 0 0 1 nodo hijo, maximo dos nodos hijos, los cuales se conocen como hijo izquierdo e hijo derecho
 class TreeNode {
-  constructor(data) {
-    this.data = data;
+  constructor() {
+    this.data = null;
     this.left = null;
     this.right = null;
   }
