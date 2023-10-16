@@ -70,7 +70,28 @@ class BinarySearchTree {
 
     return false;
   }
+
+
+
 }
+
+// Recursividad
+/*
+La recursividad es la capacidad de una función de invocarse asi misma
+
+function recursividadShowMessage(n){
+  //caso base
+  if (n === 0) {
+   return n; 
+  }
+
+  //comienza el apilamiento de llamadas
+  console.log(`Numero; ${n}`);
+  recursividadShowMessage( n - 1 );
+  console.log(`Mensaje: ${n}`);
+}
+recursividadShowMessage(5);
+*/
 
 const arbolBinario = new BinarySearchTree();
 arbolBinario.insertarNodo(10);
