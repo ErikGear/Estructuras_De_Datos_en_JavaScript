@@ -8,7 +8,7 @@ class TreeNode {
     this.right = null;
   }
 
-  toString(){
+  toString() {
     return `${this.data}`;
   }
 }
@@ -49,30 +49,27 @@ class BinarySearchTree {
     }
   }
 
-  buscarNodo(nodo){
+  buscarNodo(nodo) {
     if (this.root === null) {
-        return false;
+      return false;
     }
 
     let tmp = this.root;
 
-    while(tmp !== null){
+    while (tmp !== null) {
+      if (tmp.data === nodo) {
+        return tmp;
+      }
 
-        if (tmp.data === nodo) {
-            return tmp;
-        }
-
-        if (nodo < tmp.data) {
-            tmp = tmp.left;
-        } else {
-            tmp = tmp.right;
-        }
+      if (nodo < tmp.data) {
+        tmp = tmp.left;
+      } else {
+        tmp = tmp.right;
+      }
     }
 
     return false;
-
   }
-
 }
 
 const arbolBinario = new BinarySearchTree();
